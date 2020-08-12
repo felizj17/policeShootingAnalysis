@@ -18,19 +18,23 @@ int main() {
 	else {
 		cout << "File not found!\n Try entering full path of document with '\' replaced with '\\' \n";
 	}
-	
-	//int nor = rowCount(fs);
-	Case *b[15];
+	//nor will store the number of lines extracted from the file
+	int nor = rowCount(fs);
+	//change to vector of type Case arrays not as easy to manipulate 
+	Case *b[4896];
 	for (int i = 0; i <= 14;i++) {
 		b[i] = new Case();
 	}
-	
+	/*======================================================================================================================================================*/
+	//currently troubleshooting
+	/*======================================================================================================================================================*/
 	//while (!a.eof()) {
-	for (int i = 0; i <= 14;i++) {
+	for (int i = 0; i <= nor;i++) {
 		for (int j = 0;j < 15;j++) {
 			a.getline(str, 32, ',');
 			data[j] = str;
 		}
+		//assigning the data to the case class variables 
 		b[i]->setId(data[0]);
 		b[i]->setName(data[1]);
 		b[i]->setDate(data[2]);
@@ -47,8 +51,6 @@ int main() {
 		b[i]->setBody_cam(data[13]);
 		b[i]->setArms(data[14]);
 	}
-	//cout << "Enter the path of the file to open.";
-	//cin >> path;
-	//extraction(fs, caseV, 15);
+	//testing the extraction of the data
 	cout << b[4]->getCity();
 }
