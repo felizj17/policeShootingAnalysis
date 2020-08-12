@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+void bodyCamPercent(Case *a[], int b, Percent c[]);
 double racePercent(Case *a[], int);
 int main() {
 	string fs;
@@ -59,7 +60,7 @@ int main() {
 	
 }
 
-double racePercent(Case *a[], int b){
+void racePercent(Case *a[], int b, Percents *c[]){
 	string r = "  ";
 	int white = 0, black = 0, asian = 0, native = 0,hispanic = 0, other = 0;
 	for(int i = 0; i < b;i++){
@@ -68,4 +69,32 @@ double racePercent(Case *a[], int b){
 			white++;
 		}
 		else if( r == "Black"){
+			black++;
+		}
+		else if(r == "Asian"){
+			asian++;
+		}
+		else if(r == "Native"){
+			native++;
+		}
+		else if(r == "Hispanic"){
+			hispanic++;
+		}
+		else if(r == "Other"){
+			other++;
+		}
+	}
+	c[0] = (white/b)*100;
+	c[1] = (black/b)*100;
+	c[2] = (asian/b)*100;
+	c[3] = (native/b)*100;
+	c[4] = (hispanic/b)*100;
+	c[5] = (other/b)*100;
+	
+}
+
+void bodyCamPercent(Case *a[], int b, Percent c[]){
+
+}
+		
 			
