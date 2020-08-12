@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+double racePercent(Case *a[], int);
 int main() {
 	string fs;
 	fs = "C:\\Users\\feliz\\Downloads\\policeshootings.csv";
@@ -51,8 +52,20 @@ int main() {
 		b[i]->setBody_cam(data[13]);
 		b[i]->setArms(data[14]);
 	}
+	a.close();
 	//testing the extraction of the data
 	cout << b[4]->getCity();
 	cout << b[89]->getRace();
 	
 }
+
+double racePercent(Case *a[], int b){
+	string r = "  ";
+	int white = 0, black = 0, asian = 0, native = 0,hispanic = 0, other = 0;
+	for(int i = 0; i < b;i++){
+		r = *a[i]->getRace();
+		if( r == "White"){
+			white++;
+		}
+		else if( r == "Black"){
+			
