@@ -22,14 +22,14 @@ int main() {
 	int nor = rowCount(fs);
 	//change to vector of type Case arrays not as easy to manipulate 
 	Case *b[4896];
-	for (int i = 0; i <= 14;i++) {
+	for (int i = 0; i <= nor - 1;i++) {
 		b[i] = new Case();
 	}
 	/*======================================================================================================================================================*/
 	//currently troubleshooting
 	/*======================================================================================================================================================*/
 	//while (!a.eof()) {
-	for (int i = 0; i <= nor;i++) {
+	for (int i = 0; i <= nor-1;i++) {
 		for (int j = 0;j < 15;j++) {
 			a.getline(str, 32, ',');
 			data[j] = str;
@@ -53,4 +53,6 @@ int main() {
 	}
 	//testing the extraction of the data
 	cout << b[4]->getCity();
+	cout << b[89]->getRace();
+	
 }
