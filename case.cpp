@@ -27,21 +27,6 @@ string Case::getThreatlevel() { return threatlevel; }
 string Case::getArms() { return arms; }
 string Case::getState() { return state; }
 string Case::getGender() { return gender; }
-bool Case::getBody_cam() { 
-	if (body_cam == "True")
-		return "True";
-	else
-		return "False"; 
-}
-bool Case::getFleeing() { 
-	if (fleeing == "True")
-		return "True";
-	else
-		return "False";
-}
-bool Case::getSomi() { 
-	if (somi == "True")
-		return "True";
-	else
-		return "False"; 
-}
+string Case::getBody_cam() { return body_cam;}
+string Case::getFleeing() { return fleeing;}
+string Case::getSomi() { return somi; }

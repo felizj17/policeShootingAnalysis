@@ -1,5 +1,5 @@
 #pragma once
-#include <fstream>
+//#include <fstream>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -39,7 +39,7 @@ public:
 	string getCity();
 	string getState();
 	string getGender();
-	bool getBody_cam();
-	bool getFleeing();
-	bool getSomi();
+	string getBody_cam();
+	string getFleeing();
+	string getSomi();
 };
