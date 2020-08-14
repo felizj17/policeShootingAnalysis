@@ -6,7 +6,7 @@
 using namespace std;
 
 int rowCount(string a);
-void bodyCamPercent(Case *a[], double b, double *c[]);
+void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], double b, double c[]);
 int main() {
 	string fs;
@@ -54,9 +54,8 @@ int main() {
 		b[i].setBody_cam(data[13]);
 		b[i].setArms(data[14]);		
 	}
-	bool c = false;
-	cout << c;
-	/*
+	
+	
 	racePercent(b, nor, race_percentages);
 	for (int f = 0; f < 6; f++) {
 		cout << race_percentages[f] << '\n';
