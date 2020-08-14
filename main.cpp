@@ -4,16 +4,18 @@
 #include <string>
 #include <vector>
 using namespace std;
-
 int rowCount(string a);
 void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], double b, double c[]);
+void stateRacePopulationComparision(Case a[], double b, double c[]);
+
 int main() {
 	string fs;
 	int i = 0;
 	fs = "C:\\Users\\feliz\\Downloads\\policeshootings.csv";
 	char str[64];
 	double race_percentages[6];
+	double body_cam_percentages[3];
 	string data[15];
 	ifstream a;
 	a.open(fs);
@@ -37,7 +39,7 @@ int main() {
 			data[j] = str;
 			
 		}
-		//assigning the data to the case class variables 
+		//assigning the data to the Case class variables 
 		b[i].setId(data[0]);
 		b[i].setName(data[1]);
 		b[i].setDate(data[2]);
@@ -61,7 +63,7 @@ int main() {
 		cout << race_percentages[f] << '\n';
 	}
 
-	/*testing the extraction of the data
+	/*testing the extraction of the data 
 	cout << "\t" << b[4894].getId();
 	cout << "\t" << b[4894].getName();
 	cout << "\t" << b[4894].getDate();
@@ -134,6 +136,15 @@ void bodyCamPercent(Case a[], double b, double c[]) {
 			other++;
 		}
 	}
+	c[0] = (bodyCam_t / b) * 100;
+	c[1] = (bodyCam_f / b) * 100;
+	c[2] = (other / b) * 100;
+
+}
+
+void stateRacePopulationComparision(Case a[], double b, double c[] ){
+
+
 }
 
 int rowCount(string a)
