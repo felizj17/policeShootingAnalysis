@@ -116,7 +116,24 @@ void racePercent(Case a[], double b, double c[]) {
 }
 
 void bodyCamPercent(Case a[], double b, double c[]) {
-
+	string bc;
+	string t = "True";
+	string f = "False";
+	int bodyCam_t = 0;
+	int	bodyCam_f = 0;
+	int other = 0;
+	for (int i = 0; i < b; i++) {
+		bc = a[i].getBody_cam();
+		if (bc.compare(t) == 0) {
+			bodyCam_t++;
+			}
+		else if(bc.compare(f) == 0){
+			bodyCam_f++;
+		}
+		else {
+			other++;
+		}
+	}
 }
 
 int rowCount(string a)
