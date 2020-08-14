@@ -142,7 +142,7 @@ void bodyCamPercent(Case a[], double b, double c[]) {
 
 }
 
-void stateRacePopulationComparision(Case a[], double b, double c[] ){
+void stateRacePopComp(Case a[], double b, double c[] ){
 
 
 }
