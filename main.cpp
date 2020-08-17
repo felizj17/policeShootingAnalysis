@@ -7,7 +7,7 @@ using namespace std;
 int rowCount(string a);
 void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], double b, double c[]);
-void stateRacePopulationComparision(Case a[], double b, double c[]);
+void stateRacePopComp(Case a[], double b, double c[]);
 
 int main() {
 	string fs;
@@ -119,8 +119,8 @@ void racePercent(Case a[], double b, double c[]) {
 
 void bodyCamPercent(Case a[], double b, double c[]) {
 	string bc;
-	string t = "True";
-	string f = "False";
+	string t = "TRUE";
+	string f = "FALSE";
 	int bodyCam_t = 0;
 	int	bodyCam_f = 0;
 	int other = 0;
@@ -145,7 +145,7 @@ void bodyCamPercent(Case a[], double b, double c[]) {
 void stateRacePopComp(Case a[], double b, double c[] ){
 	string s;
 	for (int i = 0; i < b; i++) {
-		s = a->getState();
+		s = a[i].getState();
 
 	}
 
