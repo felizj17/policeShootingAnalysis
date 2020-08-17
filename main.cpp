@@ -143,7 +143,11 @@ void bodyCamPercent(Case a[], double b, double c[]) {
 }
 
 void stateRacePopComp(Case a[], double b, double c[] ){
+	string s;
+	for (int i = 0; i < b; i++) {
+		s = a->getState();
 
+	}
 
 }
 

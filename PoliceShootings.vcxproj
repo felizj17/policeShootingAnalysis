@@ -142,9 +142,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="case.cpp" />
+    <ClCompile Include="state.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="case.h" />
+    <ClInclude Include="state.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Downloads\policeshootings.csv" />
