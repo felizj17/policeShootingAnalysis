@@ -13,4 +13,4 @@ void State::setBlack(int){}
 void State::setAsian(int){}
 void State::setWhite(int){}
 void State::setNative(int){}
-double State::calculatePercent(char, double[]) {}
+double State::calculatePercent(char, double[]) { return race_percentages[0]; }
