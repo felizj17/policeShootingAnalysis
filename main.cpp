@@ -1,10 +1,12 @@
 #include "case.h"
+#include "state.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 using namespace std;
-void dataExtract(Case a[], int b, string c);
+void dataExtractPoliceShooting(Case a[], int b, string c);
+void dataExtractCensusData(State a[], int b, string c);
 int rowCount(string a);
 void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], double b, double c[]);
@@ -19,7 +21,7 @@ int main() {
 	int nor = rowCount(ps);
 	Case* b = NULL;
 	b = new Case[nor];
-	dataExtract(b, nor, ps);	
+	dataExtractPoliceShooting(b, nor, ps);	
 	racePercent(b, nor, race_percentages);
 	for (int f = 0; f < 6; f++) {
 		cout << race_percentages[f] << '\n';
@@ -132,7 +134,7 @@ int rowCount(string a)
 	ds.close();
 	return count;
 }
-void dataExtract(Case a[], int b, string c) {
+void dataExtractPoliceShooting(Case a[], int b, string c) {
 	ifstream ds;
 	char str[64];
 	string data[15];
@@ -167,4 +169,7 @@ void dataExtract(Case a[], int b, string c) {
 		a[i].setArms(data[14]);
 	}
 	ds.close();
+}
+void dataExtractCensusData(State a[], int b, string c) {
+
 }
