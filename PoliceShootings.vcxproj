@@ -149,6 +149,7 @@
     <ClInclude Include="state.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\OneDrive\Desktop\CensusData2017.csv" />
     <None Include="..\..\..\Downloads\policeshootings.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,2 +1,4 @@
 C:\Users\Boiler Room\source\repos\policeShooting\x64\Debug\PoliceShootings.exe
 C:\Users\Boiler Room\source\repos\policeShooting\x64\Debug\PoliceShootings.pdb
+C:\Users\feliz\source\repos\policeShootingAnalysis\new\x64\Debug\PoliceShootings.exe
+C:\Users\feliz\source\repos\policeShootingAnalysis\new\x64\Debug\PoliceShootings.pdb
