@@ -19,8 +19,12 @@ int main() {
 	double race_percentages[6];
 	double body_cam_percentages[3];
 	int nor = rowCount(ps);
+	int norcd = rowCount(cd);
+	State* a = NULL;
+	a = new State[norcd - 1];
 	Case* b = NULL;
 	b = new Case[nor];
+
 	dataExtractPoliceShooting(b, nor, ps);	
 	racePercent(b, nor, race_percentages);
 	for (int f = 0; f < 6; f++) {
