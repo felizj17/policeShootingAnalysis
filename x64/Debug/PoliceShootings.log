@@ -1,5 +1,1 @@
-﻿  main.cpp
-C:\Users\feliz\source\repos\policeShootingAnalysis\main.cpp(18,9): warning C4101: 'body_cam_percentages': unreferenced local variable
-  state.cpp
-  Generating Code...
-  PoliceShootings.vcxproj -> C:\Users\feliz\Source\Repos\policeShootingAnalysis\x64\Debug\PoliceShootings.exe
+﻿LINK : fatal error LNK1168: cannot open C:\Users\Boiler Room\Source\Repos\policeShootingAnalysis\x64\Debug\PoliceShootings.exe for writing

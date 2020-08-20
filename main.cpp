@@ -35,7 +35,7 @@ int main() {
 		cout << race_percentages[f] << '\n';
 	}
 	dataExtractCensusData(a, norcd, cd);
-	cout << '\n' << a[51].getOther();
+	//cout << '\n' << a[51].getOther();
 	/*testing the extraction of the data 
 	cout << "\t" << b[4894].getId();
 	cout << "\t" << b[4894].getName();
@@ -182,21 +182,21 @@ void dataExtractPoliceShooting(Case a[], int b, string c) {
 }
 void dataExtractCensusData(State a[], int b, string c) {
 	ifstream ft;
-	char str[256];
+	char str[64];
 	string str1[8];
 	ft.open(c);
 	if (ft.is_open()) {
 
 		cout << "File is Open! \n";
 		ft.seekg(0, ft.beg);
-		ft.ignore(256, '\n');
+		//ft.ignore(256, '\n');
 	}
 	else {
 		cout << "Bad File, Try Again! \n";
 	}
 	for (int i = 0; i < b; i++) {
 		for (int j = 0; j < 8; j++) {
-			ft.getline(str, 8, ',');
+			ft.getline(str, 16, ',');
 			str1[j] = str;
 	
 		}
