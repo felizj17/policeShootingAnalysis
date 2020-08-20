@@ -1,3 +1,5 @@
 ﻿  main.cpp
-C:\Users\feliz\source\repos\policeShootingAnalysis\new\main.cpp(18,9): warning C4101: 'body_cam_percentages': unreferenced local variable
-  PoliceShootings.vcxproj -> C:\Users\feliz\Source\Repos\policeShootingAnalysis\new\x64\Debug\PoliceShootings.exe
+C:\Users\feliz\source\repos\policeShootingAnalysis\main.cpp(18,9): warning C4101: 'body_cam_percentages': unreferenced local variable
+  state.cpp
+  Generating Code...
+  PoliceShootings.vcxproj -> C:\Users\feliz\Source\Repos\policeShootingAnalysis\x64\Debug\PoliceShootings.exe

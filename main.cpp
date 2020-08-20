@@ -13,13 +13,17 @@ void racePercent(Case a[], double b, double c[]);
 void stateRacePopComp(Case a[], double b, double c[]);
 
 int main() {
+	//percentage arrays 
+	double race_percentages[6];
+	double body_cam_percentages[3];
+	//set-up for moving data from csv files 
 	string ps,cd;
 	ps = "policeshootings.csv";
 	cd = "CensusData2017.csv";
-	double race_percentages[6];
-	double body_cam_percentages[3];
 	int nor = rowCount(ps);
 	int norcd = rowCount(cd);
+
+
 	State* a = NULL;
 	a = new State[norcd - 1];
 	Case* b = NULL;
@@ -30,7 +34,8 @@ int main() {
 	for (int f = 0; f < 6; f++) {
 		cout << race_percentages[f] << '\n';
 	}
-
+	dataExtractCensusData(a, norcd, cd);
+	cout << '\n' << a[51].getOther();
 	/*testing the extraction of the data 
 	cout << "\t" << b[4894].getId();
 	cout << "\t" << b[4894].getName();
@@ -76,12 +81,12 @@ void racePercent(Case a[], double b, double c[]) {
 			other++;
 		}
 	}
-	c[0] = (white / b)*100;
-	c[1] = (black / b)*100;
-	c[2] = (asian / b)*100;
-	c[3] = (native / b)*100;
-	c[4] = (hispanic / b)*100;
-	c[5] = (other / b)*100;
+	c[0] = (white / b) * 100;
+	c[1] = (black / b) * 100;
+	c[2] = (asian / b) * 100;
+	c[3] = (native / b) * 100;
+	c[4] = (hispanic / b) * 100;
+	c[5] = (other / b) * 100;
 	 
 }
 
@@ -145,9 +150,10 @@ void dataExtractPoliceShooting(Case a[], int b, string c) {
 	ds.open(c);
 	if (ds.is_open()) {
 		cout << "File is Open\n";
+		ds.seekg(0, ds.beg);
 	}
 	else {
-		cout << "File not found!\n Try entering full path of document with '\' replaced with '\\' \n";
+		cout << "Bad File, Try Again! \n";
 	}
 	for (int i = 0; i < b; i++) {
 		for (int j = 0; j < 15; j++) {
@@ -175,5 +181,33 @@ void dataExtractPoliceShooting(Case a[], int b, string c) {
 	ds.close();
 }
 void dataExtractCensusData(State a[], int b, string c) {
+	ifstream ft;
+	char str[256];
+	string str1[8];
+	ft.open(c);
+	if (ft.is_open()) {
 
+		cout << "File is Open! \n";
+		ft.seekg(0, ft.beg);
+		ft.ignore(256, '\n');
+	}
+	else {
+		cout << "Bad File, Try Again! \n";
+	}
+	for (int i = 0; i < b; i++) {
+		for (int j = 0; j < 8; j++) {
+			ft.getline(str, 8, ',');
+			str1[j] = str;
+	
+		}
+		a[i].setState(str1[0]);
+		a[i].setTotal(str1[1]);
+		a[i].setHispanic(str1[2]);
+		a[i].setWhite(str1[3]);
+		a[i].setBlack(str1[4]);
+		a[i].setAsian(str1[5]);
+		a[i].setNative(str1[6]);
+		a[i].setOther(str1[7]);
+	}
+	ft.close();
 }
