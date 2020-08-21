@@ -189,15 +189,18 @@ void dataExtractCensusData(State a[], int b, string c) {
 
 		cout << "File is Open! \n";
 		ft.seekg(0, ft.beg);
-		//ft.ignore(256, '\n');
+		ft.ignore(256, '\n');
 	}
 	else {
 		cout << "Bad File, Try Again! \n";
 	}
 	for (int i = 0; i < b; i++) {
+
 		for (int j = 0; j < 8; j++) {
 			ft.getline(str, 16, ',');
+			//cout << str << '\n';
 			str1[j] = str;
+			cout << str1[j] << '\n';
 	
 		}
 		a[i].setState(str1[0]);
