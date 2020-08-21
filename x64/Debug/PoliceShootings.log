@@ -1,3 +1,10 @@
-﻿  main.cpp
-C:\Users\Boiler Room\policeShooting\main.cpp(18,9): warning C4101: 'body_cam_percentages': unreferenced local variable
+﻿  state.cpp
+C:\Users\Boiler Room\policeShooting\state.cpp(48,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(49,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(50,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(51,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(52,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(53,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Boiler Room\policeShooting\state.cpp(46,6): warning C4101: 's': unreferenced local variable
+C:\Users\Boiler Room\policeShooting\state.cpp(47,8): warning C4101: 'ptr': unreferenced local variable
   PoliceShootings.vcxproj -> C:\Users\Boiler Room\policeShooting\x64\Debug\PoliceShootings.exe

@@ -2,7 +2,7 @@
 #include "case.h"
 class State {
 private:
-	string total_population , hispanic_population, black_population, asian_population, white_population, native_population, other_population;
+	string total_population, hispanic_population, black_population, asian_population, white_population, native_population, other_population;
 	string state_abbreviated;
 	unsigned long int tp, hp, bp, ap, wp, np, op;
 	double race_percentages[6] = {0.0,0.0,0.0,0.0,0.0,0.0};
@@ -25,4 +25,5 @@ public:
 	void setNative(string);
 	void setOther(string);
 	void calculatePercent(int, double[]);
+	void conversions();
 };

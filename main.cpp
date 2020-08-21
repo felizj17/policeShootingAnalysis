@@ -30,12 +30,14 @@ int main() {
 	b = new Case[nor];
 
 	dataExtractPoliceShooting(b, nor, ps);	
-	racePercent(b, nor, race_percentages);
-	for (int f = 0; f < 6; f++) {
+	/*racePercent(b, nor, race_percentages);
+/*	for (int f = 0; f < 6; f++) {
 		cout << race_percentages[f] << '\n';
-	}
+	}*/
 	dataExtractCensusData(a, norcd, cd);
-	cout << '\n' << a[50].getOther();
+	//cout << '\n' << a[50].getOther();
+	a[18].conversions(); 
+	
 	/*testing the extraction of the data 
 	cout << "\t" << b[4894].getId();
 	cout << "\t" << b[4894].getName();

@@ -17,9 +17,13 @@ void State::setWhite(string a) { white_population = a; }
 void State::setOther(string a) { other_population = a; }
 void State::setNative(string a) { native_population = a; }
 void State::calculatePercent(int a, double b[]) {  
+	
+
+	
 	/*switch (a) {
 	case 0:
-		b[0] = (hispanic_population / total_population) * 100;
+	
+		b[0] = (hp/tp) * 100;
 		break;
 	case 1:
 		b[1] = (black_population / total_population) * 100;
@@ -37,4 +41,24 @@ void State::calculatePercent(int a, double b[]) {
 		b[5] = (other_population / total_population) * 100;
 		break;
 	}*/
+}
+void State::conversions() {
+	int s, t, h, a, w, n, o;
+	char *ptr, c[17];
+	t = total_population.length();
+	h = hispanic_population.length();
+	a = asian_population.length();
+	w = white_population.length();
+	n = native_population.length();
+	o = other_population.length();
+	for (int i = 0; i <= t; i++) {
+		c[i] = total_population[i];
+	}
+	c[t + 1] = 0;
+	for (int j = 0; j < t; j++) {
+		cout << c[j];
+	}
+
+	//tp = strtoul(c, &ptr, t+1);
+	//cout << tp;
 }
