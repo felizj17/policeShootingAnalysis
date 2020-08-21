@@ -25,7 +25,7 @@ int main() {
 
 
 	State* a = NULL;
-	a = new State[norcd - 1];
+	a = new State[norcd];
 	Case* b = NULL;
 	b = new Case[nor];
 
@@ -35,7 +35,7 @@ int main() {
 		cout << race_percentages[f] << '\n';
 	}
 	dataExtractCensusData(a, norcd, cd);
-	//cout << '\n' << a[51].getOther();
+	cout << '\n' << a[50].getOther();
 	/*testing the extraction of the data 
 	cout << "\t" << b[4894].getId();
 	cout << "\t" << b[4894].getName();
@@ -204,13 +204,21 @@ void dataExtractCensusData(State a[], int b, string c) {
 	
 		}
 		a[i].setState(str1[0]);
+		//cout << a[1].getState() << '\n';
 		a[i].setTotal(str1[1]);
+		//cout << a[1].getTotal() << '\n';
 		a[i].setHispanic(str1[2]);
+		//cout << a[1].getHispanic() << '\n';
 		a[i].setWhite(str1[3]);
+		//cout << a[1].getWhite() << '\n';
 		a[i].setBlack(str1[4]);
+		//cout << a[1].getBlack() << '\n';
 		a[i].setAsian(str1[5]);
+		//cout << a[1].getAsian() << '\n';
 		a[i].setNative(str1[6]);
+		//cout << a[1].getNative() << '\n';
 		a[i].setOther(str1[7]);
+		//cout << a[1].getOther() << '\n';
 	}
 	ft.close();
 }

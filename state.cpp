@@ -1,6 +1,7 @@
 #include "state.h"
 State::State() {}
 string State::getTotal() { return total_population; }
+string State::getState() { return state_abbreviated; }
 string State::getHispanic() { return hispanic_population; }
 string State::getBlack() { return black_population; }
 string State::getOther() { return other_population; }
