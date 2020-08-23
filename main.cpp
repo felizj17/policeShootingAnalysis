@@ -5,12 +5,13 @@
 #include <string>
 #include <vector>
 using namespace std;
+void statePerFill();
 void dataExtractPoliceShooting(Case a[], int b, string c);
 void dataExtractCensusData(State a[], int b, string c);
-int rowCount(string a);
 void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], double b, double c[]);
 void stateRacePopComp(Case a[], double b, double c[]);
+int rowCount(string a);
 
 int main() {
 	//percentage arrays 
@@ -22,39 +23,21 @@ int main() {
 	cd = "CensusData2017.csv";
 	int nor = rowCount(ps);
 	int norcd = rowCount(cd);
-
-
+	//dynamic creation of arrays for transfer 
 	State* a = NULL;
 	a = new State[norcd];
 	Case* b = NULL;
 	b = new Case[nor];
 
 	dataExtractPoliceShooting(b, nor, ps);	
-	/*racePercent(b, nor, race_percentages);
-/*	for (int f = 0; f < 6; f++) {
+	racePercent(b, nor, race_percentages);
+	/*for (int f = 0; f < 6; f++) {
 		cout << race_percentages[f] << '\n';
 	}*/
 	dataExtractCensusData(a, norcd, cd);
 	//cout << '\n' << a[50].getOther();
-	a[18].conversions(); 
-	
-	/*testing the extraction of the data 
-	cout << "\t" << b[4894].getId();
-	cout << "\t" << b[4894].getName();
-	cout << "\t" << b[4894].getDate();
-	cout << "\t" << b[4894].getMod();
-	cout << "\t" << b[4894].getWeapon();
-	cout << "\t" << b[4894].getAge();
-	cout << "\t" << b[4894].getGender();
-	cout << "\t" << b[4894].getRace();
-	cout << "\t" << b[4894].getCity();
-	cout << "\t" << b[4894].getState(); 
-	cout << "\t" << b[4894].getSomi();
-	cout << "\t" << b[4894].getThreatlevel();
-	cout << "\t" << b[4894].getFleeing();
-	cout << "\t" << b[4894].getBody_cam();
-	cout << '\t' << b[4894].getArms();
-	*/
+	a[0].calculatePercent(0);
+	cout << '\n' << race_percentages[0];
 	
 }
 
@@ -202,7 +185,7 @@ void dataExtractCensusData(State a[], int b, string c) {
 			ft.getline(str, 16, ',');
 			//cout << str << '\n';
 			str1[j] = str;
-			cout << str1[j] << '\n';
+			//cout << str1[j] << '\n';
 	
 		}
 		a[i].setState(str1[0]);
@@ -221,6 +204,12 @@ void dataExtractCensusData(State a[], int b, string c) {
 		//cout << a[1].getNative() << '\n';
 		a[i].setOther(str1[7]);
 		//cout << a[1].getOther() << '\n';
+		for (int k = 0; k < 6; k++) {
+			a[i].calculatePercent(k);
+		}
 	}
 	ft.close();
+}
+void statePerFill() {
+	
 }
