@@ -4,13 +4,17 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm> 
+#include <cctype>
+#include <locale>
+
 using namespace std;
-void statePerFill();
+
 void dataExtractPoliceShooting(Case a[], int b, string c);
 void dataExtractCensusData(State a[], int b, string c);
 void bodyCamPercent(Case a[], double b, double c[]);
-void racePercent(Case a[], double b, double c[]);
-void stateRacePopComp(Case a[], double b, double c[]);
+void racePercent(Case a[], int b, double c[]);
+void stateRacePopComp(Case a[], int b, int d, double c[]);
 int rowCount(string a);
 
 int main() {
@@ -37,11 +41,17 @@ int main() {
 	dataExtractCensusData(a, norcd, cd);
 	//cout << '\n' << a[50].getOther();
 	a[0].calculatePercent(0);
-	cout << '\n' << race_percentages[0];
-	
+	//cout << '\n' << race_percentages[0];
+	string s = b[4].getState(),t = a[5].getState();
+	cout << b[4].getState() << a[5].getState()<<endl;
+	cout << s.compare(t) << endl;
+	cout << t.compare(s) << endl;
+	cout << t.compare("CO") << endl;
+	cout << s.compare("CO");
+		
 }
 
-void racePercent(Case a[], double b, double c[]) {
+void racePercent(Case a[], int b, double c[]) {
 	string r = "  ";
 	double white = 0.0, black = 0.0, asian = 0.0, native = 0.0, hispanic = 0.0, other = 0.0;
 	for (int i = 0; i < b;i++) {
@@ -100,14 +110,7 @@ void bodyCamPercent(Case a[], double b, double c[]) {
 
 }
 
-void stateRacePopComp(Case a[], double b, double c[] ){
-	string s;
-	for (int i = 0; i < b; i++) {
-		s = a[i].getState();
 
-	}
-
-}
 
 int rowCount(string a)
 {
@@ -210,6 +213,20 @@ void dataExtractCensusData(State a[], int b, string c) {
 	}
 	ft.close();
 }
-void statePerFill() {
-	
-}
+/*void stateRacePopComp(Case a[], State b[], int c, int d, double e[]) {
+	string s;
+	int count = 0;
+	for (int i = 0; i < c; i++) {
+		s = a[i].getState();
+		for (int j = 0; j < d; j++) {
+			if (s.compare(b[j].getState()) == 0) {
+				count++;
+			}
+			else if(s.compare)
+		}
+
+
+
+	}
+
+}*/

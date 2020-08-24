@@ -10,3 +10,5 @@ C:\Users\Boiler Room\project1\x64\Debug\PoliceShootings.exe
 C:\Users\Boiler Room\project1\x64\Debug\PoliceShootings.pdb
 C:\Users\Boiler Room\policeShooting\x64\Debug\PoliceShootings.exe
 C:\Users\Boiler Room\policeShooting\x64\Debug\PoliceShootings.pdb
+C:\Users\Boiler Room\source\repos\Redo\x64\Debug\PoliceShootings.exe
+C:\Users\Boiler Room\source\repos\Redo\x64\Debug\PoliceShootings.pdb
