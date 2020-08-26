@@ -9,7 +9,7 @@
 #include <locale>
 
 using namespace std;
-string trim(const string&);
+string trim(string);
 void dataExtractPoliceShooting(Case a[], int b, string c);
 void dataExtractCensusData(State a[], int b, string c);
 void bodyCamPercent(Case a[], double b, double c[]);
@@ -201,7 +201,9 @@ void dataExtractCensusData(State a[], int b, string c) {
 			//cout << str1[j] << '\n';
 	
 		}
-		a[i].setState(trim(str1[0]));
+		str1[0] = trim(str1[0]);
+
+		a[i].setState(str1[0]);
 		//cout << a[1].getState() << '\n';
 		a[i].setTotal(str1[1]);
 		//cout << a[1].getTotal() << '\n';
@@ -261,13 +263,8 @@ int strcmp1(string a1, string a2) {
 		return 0;
 	}
 }
-string trim(const string& str)
+string trim(string str)
 {
-	size_t first = str.find_first_not_of(' ');
-	if (string::npos == first)
-	{
-		return str;
-	}
-	size_t last = str.find_last_not_of(' ');
-	return str.substr(first, (last - first + 1));
+	str.erase(0, 1);
+	return str;
 }
