@@ -37,7 +37,7 @@
     <None Include="..\..\..\Downloads\policeshootings.csv">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="..\..\..\..\OneDrive\Desktop\CensusData2017.csv">
+    <None Include="CensusData2017.csv">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

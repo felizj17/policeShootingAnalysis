@@ -9,13 +9,14 @@
 #include <locale>
 
 using namespace std;
-
+string trim(const string&);
 void dataExtractPoliceShooting(Case a[], int b, string c);
 void dataExtractCensusData(State a[], int b, string c);
 void bodyCamPercent(Case a[], double b, double c[]);
 void racePercent(Case a[], int b, double c[]);
 void stateRacePopComp(Case a[], int b, int d, double c[]);
 int rowCount(string a);
+int strcmp1(string a1, string a2);
 
 int main() {
 	//percentage arrays 
@@ -42,12 +43,20 @@ int main() {
 	//cout << '\n' << a[50].getOther();
 	a[0].calculatePercent(0);
 	//cout << '\n' << race_percentages[0];
-	string s = b[4].getState(),t = a[5].getState();
-	cout << b[4].getState() << a[5].getState()<<endl;
+	string s = b[4].getState();
+	string t = a[6].getState();
+	cout << b[4].getState() << a[6].getState()<<endl;
 	cout << s.compare(t) << endl;
+	cout << t[0] << endl << t[1];
+	cout << strcmp1(s, t) << endl;
 	cout << t.compare(s) << endl;
+	cout << strcmp1(t, s) << endl;
 	cout << t.compare("CO") << endl;
-	cout << s.compare("CO");
+	cout << strcmp1(t, "CO") << endl;
+	cout << s.compare("CO") << endl;
+	cout << strcmp1(s, "CO") << endl;
+	
+
 		
 }
 
@@ -188,10 +197,11 @@ void dataExtractCensusData(State a[], int b, string c) {
 			ft.getline(str, 16, ',');
 			//cout << str << '\n';
 			str1[j] = str;
+
 			//cout << str1[j] << '\n';
 	
 		}
-		a[i].setState(str1[0]);
+		a[i].setState(trim(str1[0]));
 		//cout << a[1].getState() << '\n';
 		a[i].setTotal(str1[1]);
 		//cout << a[1].getTotal() << '\n';
@@ -230,3 +240,34 @@ void dataExtractCensusData(State a[], int b, string c) {
 	}
 
 }*/
+int strcmp1(string a1, string a2) {
+	int s = 0, n = 0 ;
+	if (a1.size() == a2.size()) {
+		for (int j = 0; j < a1.size(); j++) {
+			while(n != 0){
+				if (int(a1[j] == a2[j])) {
+					n = 0;
+				}
+				else if (int(a1[j]) <= int(a2[j])) {
+					return -1;
+
+				}
+				else {
+					return 1;
+				}
+			}
+
+		}
+		return 0;
+	}
+}
+string trim(const string& str)
+{
+	size_t first = str.find_first_not_of(' ');
+	if (string::npos == first)
+	{
+		return str;
+	}
+	size_t last = str.find_last_not_of(' ');
+	return str.substr(first, (last - first + 1));
+}
