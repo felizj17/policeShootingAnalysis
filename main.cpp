@@ -9,7 +9,9 @@
 #include <locale>
 
 using namespace std;
-string trim(string);
+static inline void ltrim(string &s);
+static inline void rtrim(std::string &s);
+static inline void trim(std::string &s);
 void dataExtractPoliceShooting(Case a[], int b, string c);
 void dataExtractCensusData(State a[], int b, string c);
 void bodyCamPercent(Case a[], double b, double c[]);
@@ -33,7 +35,7 @@ int main() {
 	a = new State[norcd];
 	Case* b = NULL;
 	b = new Case[nor];
-
+	
 	dataExtractPoliceShooting(b, nor, ps);	
 	racePercent(b, nor, race_percentages);
 	/*for (int f = 0; f < 6; f++) {
@@ -56,7 +58,6 @@ int main() {
 	cout << s.compare("CO") << endl;
 	cout << strcmp1(s, "CO") << endl;
 	
-
 		
 }
 
@@ -201,8 +202,8 @@ void dataExtractCensusData(State a[], int b, string c) {
 			//cout << str1[j] << '\n';
 	
 		}
-		str1[0] = trim(str1[0]);
-
+		
+		trim(str1[0]);
 		a[i].setState(str1[0]);
 		//cout << a[1].getState() << '\n';
 		a[i].setTotal(str1[1]);
@@ -263,8 +264,21 @@ int strcmp1(string a1, string a2) {
 		return 0;
 	}
 }
-string trim(string str)
-{
-	str.erase(0, 1);
-	return str;
+static inline void ltrim(std::string &s) {
+	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
+		return !std::isspace(ch);
+		}));
 }
+static inline void rtrim(std::string &s) {
+	s.erase(std::find_if(s.rbegin(), s.rend(), [](int ch) {
+		return !std::isspace(ch);
+		}).base(), s.end());
+}
+
+// trim from both ends (in place)
+static inline void trim(std::string &s) {
+	ltrim(s);
+	rtrim(s);
+}
+	
+
